@@ -33,5 +33,7 @@ EXPOSE 6006
 # IPython
 EXPOSE 8888
 
+# Enable ssh on boot
+RUN systemctl enable ssh
 
 CMD ["/home/nimbix/.jupyter/run_jupyter.sh", "--allow-root"]
