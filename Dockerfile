@@ -6,8 +6,8 @@ RUN /bin/rm -rf /home/nimbix && /sbin/mkhomedir_helper nimbix
 
 # install python libs including tensorflow, jupyter
 RUN mkdir -p /etc/runtimescripts
-ADD deploy.sh /etc/runtimescripts/deploy.sh && chmod +x /etc/runtimescripts/deploy.sh
-RUN /etc/runtimescripts/deploy.sh
+ADD deploy.sh /etc/runtimescripts/deploy.sh
+RUN chmod +x /etc/runtimescripts/deploy.sh && /etc/runtimescripts/deploy.sh
 
 EXPOSE 5901
 EXPOSE 443
@@ -26,6 +26,7 @@ COPY jupyter_notebook_config.py .jupyter/
 #   https://github.com/ipython/ipython/issues/7062
 # We just add a little wrapper script.
 COPY run_jupyter.sh .jupyter/
+RUN chmod +x .jupyter/run_jupyter.sh
 
 # TensorBoard
 EXPOSE 6006
