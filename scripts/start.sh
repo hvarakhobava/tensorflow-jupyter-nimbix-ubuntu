@@ -1,4 +1,6 @@
 #!/bin/bash
+#start ssh
+sudo service ssh start
 
 # open ports
 sudo iptables -A  INPUT -p tcp --dport 8888 -j ACCEPT
