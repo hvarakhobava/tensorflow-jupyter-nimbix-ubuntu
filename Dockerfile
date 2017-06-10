@@ -37,6 +37,7 @@ EXPOSE 8888
 RUN systemctl enable ssh
 
 # Set the URL to the Tensorboard portal
+RUN mkdir -p /etc/NAE
 COPY ./NAE/url.txt /etc/NAE/url.txt
 COPY ./NAE/AppDef.json /etc/NAE/AppDef.json
 
