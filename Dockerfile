@@ -39,4 +39,5 @@ COPY ./NAE/url.txt /etc/NAE/url.txt
 COPY ./NAE/AppDef.json /etc/NAE/AppDef.json
 COPY ./NAE/AppDef.png /etc/NAE/AppDef.png
 
-CMD ["/root/.jupyter/run_jupyter.sh", "--allow-root"]
+COPY ./scripts/start.sh /etc/scripts/start.sh
+RUN chmod +x /etc/scripts/start.sh
