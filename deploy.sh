@@ -39,19 +39,7 @@ pip --no-cache-dir install \
 
 pip install -U tensorflow
 
-chown -R $(whoami) .local
-
-jupyter-notebook --generate-config && \
-echo "c.NotebookApp.ip = '*'" >> .jupyter/jupyter_notebook_config.py
-mkdir -p .jupyter/notebooks
-echo "c.NotebookApp.notebook_dir = u'.jupyter/notebooks'" >> .jupyter/jupyter_notebook_config.py
-
-iptables -A  INPUT -p tcp --dport 8888 -j ACCEPT
-iptables -A  INPUT -p tcp --dport 6006 -j ACCEPT
-
-mkdir -p /tmp/tensorboard
-screen -d -m tensorboard --logdir=/tmp/tensorboard
-screen -d -m jupyter-notebook
+chown -R nimbix:nimbix .local
 
 python -m pip install --upgrade pip
 pip install -U --user ipython sympy nose
