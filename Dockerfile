@@ -33,9 +33,6 @@ EXPOSE 6006
 # IPython
 EXPOSE 8888
 
-# Enable ssh on boot
-RUN systemctl enable ssh
-
 # Set the URL to the Tensorboard portal
 RUN mkdir -p /etc/NAE
 COPY ./NAE/url.txt /etc/NAE/url.txt
