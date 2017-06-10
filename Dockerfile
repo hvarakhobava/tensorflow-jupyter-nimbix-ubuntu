@@ -1,6 +1,10 @@
 FROM nimbix/ubuntu-base:trusty
 MAINTAINER hvarakhobava
 
+# recreate nimbix user home to get the right skeleton files
+RUN /bin/rm -rf /home/nimbix && /sbin/mkhomedir_helper nimbix
+
+# install python libs including tensorflow, jupyter
 RUN mkdir -p /etc/runtimescripts
 ADD deploy.sh /etc/runtimescripts/deploy.sh && chmod +x /etc/runtimescripts/deploy.sh
 RUN /etc/runtimescripts/deploy.sh
@@ -8,8 +12,6 @@ RUN /etc/runtimescripts/deploy.sh
 EXPOSE 5901
 EXPOSE 443
 
-# recreate nimbix user home to get the right skeleton files
-RUN /bin/rm -rf /home/nimbix && /sbin/mkhomedir_helper nimbix
 WORKDIR "/home/nimbix"
 
 # Set up our notebook config.
