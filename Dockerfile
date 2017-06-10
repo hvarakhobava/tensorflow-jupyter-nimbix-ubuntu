@@ -16,6 +16,7 @@ WORKDIR "/home/nimbix"
 
 # Set up our notebook config.
 COPY jupyter_notebook_config.py /root/.jupyter/
+RUN mkdir /root/.jupyter/notebooks
 RUN chmod +x /root/.jupyter/jupyter_notebook_config.py
 
 # Copy sample notebooks.
