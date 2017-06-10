@@ -24,4 +24,4 @@ c.MultiKernelManager.default_kernel_name = 'python2'
 # no authentication needed
 c.NotebookApp.password = ''
 c.NotebookApp.token = ''
-del os.environ['PASSWORD']
+c.NotebookApp.notebook_dir = u'/home/nimbix/.jupyter/notebooks'
