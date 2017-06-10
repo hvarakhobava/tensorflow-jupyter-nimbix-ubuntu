@@ -36,4 +36,8 @@ EXPOSE 8888
 # Enable ssh on boot
 RUN systemctl enable ssh
 
+# Set the URL to the Tensorboard portal
+COPY ./NAE/url.txt /etc/NAE/url.txt
+COPY ./NAE/AppDef.json /etc/NAE/AppDef.json
+
 CMD ["/home/nimbix/.jupyter/run_jupyter.sh", "--allow-root"]
