@@ -10,4 +10,4 @@ sudo cp -r /root/.jupyter /home/nimbix/
 screen -d -m jupyter-notebook
 screen -d -m tensorboard --logdir=/tmp/tensorboard
 
-/sbin/init
+sudo /sbin/init
