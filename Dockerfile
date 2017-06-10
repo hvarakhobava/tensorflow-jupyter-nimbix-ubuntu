@@ -19,8 +19,8 @@ RUN mkdir -p .jupyter/
 COPY jupyter_notebook_config.py .jupyter/
 
 # Copy sample notebooks.
-RUN mkdir -p .jupyter/notebooks
-COPY notebooks .jupyter/notebooks
+# RUN mkdir -p .jupyter/notebooks
+# COPY notebooks .jupyter/notebooks
 
 # Jupyter has issues with being run directly:
 #   https://github.com/ipython/ipython/issues/7062
