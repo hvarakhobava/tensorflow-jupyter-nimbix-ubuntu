@@ -9,6 +9,6 @@ sudo iptables -A  INPUT -p tcp --dport 5901 -j ACCEPT
 sudo iptables -A  INPUT -p tcp --dport 443 -j ACCEPT
 
 sudo cp -r /root/.jupyter /home/nimbix/
-sudo chown nimbix /home/nimbix/.jupyter
+sudo chown -R nimbix /home/nimbix/.jupyter
 jupyter-notebook & tensorboard --logdir=/tmp/tensorboard
 
